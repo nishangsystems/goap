@@ -1566,4 +1566,16 @@ class ProgramController extends Controller
         return back()->withInput();
     }
 
+
+    public function delete_student_application_form(Request $request, $id){
+        $appl = ApplicationForm::find($id);
+        if($appl != null){
+            $appl->delete();
+            session()->flash('success', "Student application form deleted successfully");
+        }else{
+            session()->flash('error', "Student application form with given ID not found");
+        }
+        return back();
+    }
+
 }
