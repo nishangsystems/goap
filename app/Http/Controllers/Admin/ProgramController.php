@@ -1286,6 +1286,7 @@ class ProgramController extends Controller
         }
 
         // return $this->api_service->campuses();
+        $data['programs'] = collect(json_decode($this->api_service->programs())->data);
         $data['campuses'] = json_decode($this->api_service->campuses())->data;
         $data['application'] = ApplicationForm::find($id);
 
