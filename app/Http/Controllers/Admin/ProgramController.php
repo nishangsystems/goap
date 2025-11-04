@@ -1351,6 +1351,8 @@ class ProgramController extends Controller
                 }
 
                 // dd($max_count);
+                $counter = 1;
+                COUNT_UP:
                 $next_count = substr('000'.(++$max_count), -4);
                 $student_matric = $prefix.$year.$suffix.$next_count;
 
@@ -1361,6 +1363,9 @@ class ProgramController extends Controller
                     $data['matricule'] = $student_matric;
                     $data['campus'] = collect(json_decode($this->api_service->campuses())->data)->where('id', $application->campus_id)->first();
                     return view('admin.student.confirm_change_program', $data);
+                }elseif($counter <= 10) {
+                    $counter++;
+                    goto COUNT_UP;
                 }
                 return back()->with('error', 'Failed to generate matricule');
             }
@@ -1368,6 +1373,7 @@ class ProgramController extends Controller
         return back()->with('success', 'Done');
     }
 
+    
     public function change_program_save(Request $request, $id)
     {
         # code...
