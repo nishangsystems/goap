@@ -62,6 +62,10 @@ class AppService{
             $data['matric_sn'] = substr($appl->matric, -3);
             $data['department'] = $department->name??'-------';
             $data['fee'] = $fees[0]??$fees;
+            $data['registrar'] = $admins->registrar;
+            $data['first_instalment_date'] = $config->fee1_latest_date;
+            $data['second_instalment_date'] = $config->fee2_latest_date;
+            $data['campus'] = $campus->name??'-------';
             // dd($program);
             if($data['degree'] ==  null){
                 session()->flash('error', 'Program Degree Name not set');

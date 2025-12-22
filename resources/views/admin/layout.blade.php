@@ -74,6 +74,8 @@
         }
         
     </STYLE>
+
+    @yield('style')
 @php
     $bg1 = \App\Http\Controllers\HomeController::getColor('background_color_1');
     $bg2 = \App\Http\Controllers\HomeController::getColor('background_color_2');
