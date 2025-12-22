@@ -12,6 +12,10 @@
             border-bottom: 5px solid transparent;
             border-left: 8px solid #ff4d00ff; /* arrow color */
         }
+
+        table th, table td {
+            border: 1px solid gray;
+        }
     </style>
 @endsection
 @section('section')
@@ -19,11 +23,10 @@
         <h3 class="text-uppercase"><b>{{ $title }}</b></h3>
         <hr class="border-bottom border-4 my-0 border-dark">
         <div style="font-size: large;">
-            
-            <div class="my-3 py-2 text-capitalize">
+            <div class="my-2 py-1 text-capitalize">
                 <span>{!!  __('text.dear_titles') !!} : <b class="text-danger">{{ $name??'' }}</b></span><br>
             </div>
-            <div class="my-3 py-2">
+            <div class="my-2 py-1">
                 <p>{!! __('text.admission_letter_text_block1', ['degree'=>$degree??'DEG', 'department'=>$fee['department']??'DEP', 'matric'=>$matric ,'start_of_lectures'=>$start_of_lectures, 'school_email'=>$school_email]) !!}</p>
                 <ul class="arrow-list">
                     <li>If you cannot at the time of registration produce the original copies of your certificates and other credentials this offer of admission may be revoked.</li>
@@ -33,7 +36,7 @@
                 <p>We congratulate you for your admission and welcome you into Gracious University. In case there is the need for more information or clarification, please contact email us at <b>registrar@gueduc.org</b> </p>
             </div>
 
-            <table class="my-2">
+            <table class="my-1">
                 <thead>
                     <th>@lang('text.word_campus')</th>
                     <th>@lang('text.word_address')</th>
@@ -50,7 +53,7 @@
             </table>
             
 
-            <div class="my-4 py-3 text-capitalize">
+            <div class="text-capitalize" style="margin-top: 1.2rem;">
                 <span> <b>@lang('text.the_registrar')</b>  <br> {{ $registrar??'' }} </span>
             </div>
         </div>
