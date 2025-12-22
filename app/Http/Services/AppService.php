@@ -56,7 +56,7 @@ class AppService{
             $data['school_email'] = $appl->email??'';
             $data['help_email'] =  $config->help_email;
             $data['campus'] = $campus->name??null;
-            $data['degree'] = ($program->deg_name??null) == null ? ($program->name??"") : $program->deg_name;
+            $data['degree'] = $degree->deg_name??$program->deg_name??'';
             $data['program'] = str_replace($data['degree'], ' ', $program->name??"");
             $data['_program'] = $program;
             $data['matric_sn'] = substr($appl->matric, -3);
