@@ -20,14 +20,14 @@
 @endsection
 @section('section')
     <div class="py-2 container-fluid">
-        <h3 class="text-uppercase"><b>{{ $title }}</b></h3>
+        <h3 class="text-uppercase text-center"><b>{{ $title }}</b></h3>
         <hr class="border-bottom border-4 my-0 border-dark">
         <div style="font-size: large;">
             <div class="my-2 py-1 text-capitalize">
-                <span>{!!  __('text.dear_titles') !!} : <b class="text-danger">{{ $name??'' }}</b></span><br>
+                <span>{!!  __('text.dear_titles') !!} : <b>{{ $name??'' }}</b></span><br>
             </div>
             <div class="my-2 py-1">
-                <p>{!! __('text.admission_letter_text_block1', ['degree'=>$degree??'DEG', 'department'=>$fee['department']??'DEP', 'matric'=>$matric ,'start_of_lectures'=>$start_of_lectures, 'school_email'=>$school_email, 'campus' => $campus??'MILE 17']) !!}</p>
+                <p>{!! __('text.admission_letter_text_block1', ['degree'=>$degree??'DEG', 'department'=>$program??'PROG', 'matric'=>$matric ,'start_of_lectures'=>$start_of_lectures, 'school_email'=>$school_email, 'campus' => $campus??'MILE 17']) !!}</p>
                 <ul class="arrow-list">
                     <li>If you cannot at the time of registration produce the original copies of your certificates and other credentials this offer of admission may be revoked.</li>
                     <li>{!! __('text.admission_letter_text_list_item2', ['first_instalment_date'=>$first_instalment_date, 'second_instalment_date'=>$second_instalment_date]) !!}</li>
@@ -45,9 +45,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="text-danger">{{ $campus??'' }}</td>
+                        <td>{{ $campus??'' }}</td>
                         <td>https://gustudents.com</td>
-                        <td class="text-danger">{{ $matric??'' }}</td>
+                        <td>{{ $matric??'' }}</td>
                         <td>12345678</td>
                     </tr>
             </table>
