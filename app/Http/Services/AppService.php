@@ -63,6 +63,7 @@ class AppService{
             $data['department'] = $department->name??'-------';
             $data['fee'] = $fees[0]??$fees;
             $data['registrar'] = $admins->registrar;
+            $data['registrar_tel'] = $admins->registrar_phone;
             $data['first_instalment_date'] = $config->fee1_latest_date;
             $data['second_instalment_date'] = $config->fee2_latest_date;
             $data['campus'] = $campus->name??'-------';

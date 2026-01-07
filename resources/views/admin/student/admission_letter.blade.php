@@ -33,7 +33,7 @@
                     <li>{!! __('text.admission_letter_text_list_item2', ['first_instalment_date'=>$first_instalment_date, 'second_instalment_date'=>$second_instalment_date]) !!}</li>
                     <li>It is mandatory for you to attend the orientation program for new students as will be scheduled.</li>
                 </ul>
-                <p>We congratulate you for your admission and welcome you into Gracious University. In case there is the need for more information or clarification, please contact email us at <b>registrar@gueduc.org</b> </p>
+                <p>We congratulate you for your admission and welcome you into Gracious University. In case there is the need for more information or clarification, please contact email us at <b>registrar@gueduc.org / {{ $registrar_tel??null }}</b> </p>
             </div>
 
             <table class="my-1">
